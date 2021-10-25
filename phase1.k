@@ -16,10 +16,10 @@ rot:{@[x;(2!)#!#x;|:]}    / flip pairs at odd indices
 
 p131:-1+1_2*!1+                                      / 1: https://problems.tryapl.org/psets/2013.html?goto=P1_Seems_a_Bit_Odd_To_Me
 p132:{100*(+/x>64)%#x}                               / 2: https://problems.tryapl.org/psets/2013.html?goto=P2_Making_The_Grade
-p133:+/~0=#'" "\                                     / 3: https://problems.tryapl.org/psets/2013.html?goto=P3_What_Is_In_a_Word
-p134:{(0=#x)|(~*|m)&&/~0>m:+\0^1 -1"()"?x}           / 4: https://problems.tryapl.org/psets/2013.html?goto=P4_Keeping_Things_In_Balance
+p133:+/1<':^:                                        / 3: https://problems.tryapl.org/psets/2013.html?goto=P3_What_Is_In_a_Word
+p134:{~(*|0,m)|/0>m:+\-/"()"=\:x}                    / 4: https://problems.tryapl.org/psets/2013.html?goto=P4_Keeping_Things_In_Balance
 p135:=                                               / 5: https://problems.tryapl.org/psets/2013.html?goto=P5_Identity_Crisis
-p136:{$[x~!0;0;{x|-x}(&/d)-|/d:,/x]}                 / 6: https://problems.tryapl.org/psets/2013.html?goto=P6_Home_On_The_Range
+p136:{x[0]-*|x@:>,/x}                                / 6: https://problems.tryapl.org/psets/2013.html?goto=P6_Home_On_The_Range
 p137:{x=_x}_                                         / 7: https://problems.tryapl.org/psets/2013.html?goto=P7_Float_Your_Boat
 p138:{v*/:v:1+!x}                                    / 8: https://problems.tryapl.org/psets/2013.html?goto=P8_Go_Forth_And_Multiply
 p139:{(+/'x'y)%x}                                    / 9: https://problems.tryapl.org/psets/2013.html?goto=P9_It_Is_a_Moving_Experience
@@ -28,7 +28,7 @@ p139:{(+/'x'y)%x}                                    / 9: https://problems.tryap
 
 p141:{~-/*/2#,|x,y,z}                                /  1: https://problems.tryapl.org/psets/2014.html?goto=P1_It_Is_All_Right
 p142:{(2(|1|':)/"0">x)|^"aeiou"?_x}#                 /  2: https://problems.tryapl.org/psets/2014.html?goto=P2_How_Tweet_It_Is (via @chrispsn, @coltim)
-p143:{-1_*|+x(|+\)\1 1}                              /  3: https://problems.tryapl.org/psets/2014.html?goto=P3_Tell_a_Fib
+p143:1_*+(|+\)\[;!2]@                                /  3: https://problems.tryapl.org/psets/2014.html?goto=P3_Tell_a_Fib
 p144:" "/(~#:')_" "\                                 /  4: https://problems.tryapl.org/psets/2014.html?goto=P4_Space_The_Final_Frontier
 p145:1=#|:\(~"a{"')#_:                               /  5: https://problems.tryapl.org/psets/2014.html?goto=P5_Mirror_Mirror
 p146:{+(!x;.x)}@#'=+/1+!(),                          /  6: https://problems.tryapl.org/psets/2014.html?goto=P6_Roll_The_Dice
@@ -39,7 +39,7 @@ p1410:100*|/1_-1+%':                                 / 10: https://problems.trya
 
 / https://problems.tryapl.org/psets/2015.html
 
-p151:~/{v@<v:l^(l:_x)^abc}'                          / 1: https://problems.tryapl.org/psets/2015.html?goto=P1_Nag_A_Ram
+p151:~/{x@<x^:x^abc}'_:                              / 1: https://problems.tryapl.org/psets/2015.html?goto=P1_Nag_A_Ram
 p152:|/{y*x+y}\>':(!0),                              / 2: https://problems.tryapl.org/psets/2015.html?goto=P2_Longest_Streak (via @coltim)
 p153:{?(,!2),x@*'<==%/'x}1_+&+|\=1+                  / 3: https://problems.tryapl.org/psets/2015.html?goto=P3_Farey_Tale (via @coltim)
 p154:{((#x)#<<x,y)?(#y)#<<y,x}                       / 4: https://problems.tryapl.org/psets/2015.html?goto=P4_PDI_Progessive_Dyadic_Iota
@@ -72,7 +72,7 @@ p174:{(pi*r*r:y%2.0)%360.0%x}                        / 4: https://problems.tryap
 p175:{~#x^"ACGT"}                                    / 5: https://problems.tryapl.org/psets/2017.html?goto=P5_DNA
 p176:{?x'y}                                          / 6: https://problems.tryapl.org/psets/2017.html?goto=P6_k_mers
 p177:+/'"ACGT"=\:                                    / 7: https://problems.tryapl.org/psets/2017.html?goto=P7_Counting_DNA_Nucleotides
-p178:{(!#x)=x?1}                                     / 8: https://problems.tryapl.org/psets/2017.html?goto=P8_Be_the_First_1 (via @chrispsn)
+p178: >':|\1=                                        / 8: https://problems.tryapl.org/psets/2017.html?goto=P8_Be_the_First_1 (via @chrispsn)
 p179:|=':|"",                                        / 9: https://problems.tryapl.org/psets/2017.html?goto=P9_Double_Trouble (via @coltim)
 p1710:{(s;s)#x@!s*s:-_-%#x}                          / 10: https://problems.tryapl.org/psets/2017.html?goto=P10_Squaring_Off (via @traws)
 
@@ -113,14 +113,14 @@ p1910:{(#;_)[;2!#:';x]}                              / 10: https://problems.trya
 / https://problems.tryapl.org/psets/2020.html
 
 p201:{$[x<0;o[x+#y;y];(x;x-#y)#\:y]}                 / 1: https://problems.tryapl.org/psets/2020.html?goto=P1_Lets_Split
-p202:{(&~{(~x<128)&~x>191}x)_x}                      / 2: https://problems.tryapl.org/psets/2020.html?goto=P2_Characters
+p202:{(&~2=-64!x)_x}                                 / 2: https://problems.tryapl.org/psets/2020.html?goto=P2_Characters
 p203:{26/1+ABC?x}                                    / 3: https://problems.tryapl.org/psets/2020.html?goto=P3_Columns
 p204:{(~400!x)|(~4!x)&100!x}                         / 4: https://problems.tryapl.org/psets/2020.html?goto=P4_Take_a_Leap
 p205:{(x<y)|:/(x-!x-y),x&y}                          / 5: https://problems.tryapl.org/psets/2020.html?goto=P5_Integer_Range (-4 via @bubbler)
 p206:{,/(#;_)[;x=;y]}                                / 6: https://problems.tryapl.org/psets/2020.html?goto=P6_Move_To_Front
 p207:{|/&/((#2\|/x)#2)\'x}                           / 7: https://problems.tryapl.org/psets/2020.html?goto=P7_Bits
 p208:~|/1_+':-/0<-:\-':10\                           / 8: https://problems.tryapl.org/psets/2020.html?goto=P8_Zigzag
-p209:{$[|/m:<':x;&/(m?1)_m;1]}                       / 9: https://problems.tryapl.org/psets/2020.html?goto=P9_Rise_and_Fall
+p209:&/{x~*\x=:|\x}'|:\                              / 9: https://problems.tryapl.org/psets/2020.html?goto=P9_Rise_and_Fall
 p2010:`k@    / very APL-specific                     / 10: https://problems.tryapl.org/psets/2020.html?goto=P10_Stacking_It_Up
 
 / https://www.dyalogaplcompetition.com/?goto=P1Intro
